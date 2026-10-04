@@ -1,0 +1,16 @@
+# Compiled object files
+*.o
+
+# SecCage executable
+seccage
+
+# Compiled test programs
+tests/safe_program
+tests/restricted_test
+tests/file_test
+
+# Generated test files
+sandbox_test.txt
+
+# Logs
+logs/*.log

@@ -1,0 +1,46 @@
+./seccage --policy policies/basic.conf ./tests/safe_program
+Hello! This program is running inside SecCage.
+Target program executed successfully.
+========================================
+          SecCage Sandbox
+========================================
+[SecCage] Policy: policies/basic.conf
+[SecCage] Target: ./tests/safe_program
+[SecCage] Parent waiting for child (PID: 750)...
+[SecCage] Target exited with status: 0
+[SecCage] Execution finished.
+./seccage --policy policies/basic.conf ./tests/restricted_test
+Restricted test program started.
+getppid() was BLOCKED by SecCage.
+Error: Operation not permitted
+========================================
+          SecCage Sandbox
+========================================
+[SecCage] Policy: policies/basic.conf
+[SecCage] Target: ./tests/restricted_test
+[SecCage] Parent waiting for child (PID: 752)...
+[SecCage] Target exited with status: 1
+[SecCage] Execution finished.
+./seccage --policy policies/strict.conf ./tests/safe_program
+Hello! This program is running inside SecCage.
+Target program executed successfully.
+========================================
+          SecCage Sandbox
+========================================
+[SecCage] Policy: policies/strict.conf
+[SecCage] Target: ./tests/safe_program
+[SecCage] Parent waiting for child (PID: 754)...
+[SecCage] Target exited with status: 0
+[SecCage] Execution finished.
+./seccage --policy policies/strict.conf ./tests/restricted_test
+Restricted test program started.
+getppid() was BLOCKED by SecCage.
+Error: Operation not permitted
+========================================
+          SecCage Sandbox
+========================================
+[SecCage] Policy: policies/strict.conf
+[SecCage] Target: ./tests/restricted_test
+[SecCage] Parent waiting for child (PID: 756)...
+[SecCage] Target exited with status: 1
+[SecCage] Execution finished.
